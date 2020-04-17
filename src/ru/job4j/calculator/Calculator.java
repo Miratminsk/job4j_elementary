@@ -16,5 +16,13 @@ public class Calculator {
         System.out.println(sixDivTwo);
         System.out.println(fiveMinusTwo);
         System.out.println(fourTimeTwo);
+        Calculator.plus(100, 500);
+        Calculator.plus(4, 2);
+        Calculator.plus(3, 5);
+    }
+
+    public static void plus(int first, int second) {
+        int result = first + second;
+        System.out.println(result);
     }
 }
