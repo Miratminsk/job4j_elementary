@@ -5,10 +5,16 @@ import org.junit.Assert;
 public class Converter {
 
     public static int rubleToEuro(int value) {
+        if (value < 0) {
+            return -1;
+        }
         return value / 70;
     }
 
     public static int rubleToDollar(int value) {
+        if (value < 0) {
+            return -1;
+        }
         return value / 60;
     }
 
