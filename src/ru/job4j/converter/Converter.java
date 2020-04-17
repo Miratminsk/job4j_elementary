@@ -2,20 +2,37 @@ package ru.job4j.converter;
 
 import org.junit.Assert;
 
+/**
+ * Class for converting rubles to euro and dollars.
+ * @author MiratRakhmanov
+ * @since 17.04.2020
+ * @version 1
+ */
+
 public class Converter {
 
-    public static int rubleToEuro(int value) {
-        if (value < 0) {
+    /**
+     * @param rubles - number of rubles to convert
+     * @return - number of euro which user can get for this amount of rubles
+     */
+
+    public static int rubleToEuro(int rubles) {
+        if (rubles < 0) {
             return -1;
         }
-        return value / 70;
+        return rubles / 70;
     }
 
-    public static int rubleToDollar(int value) {
-        if (value < 0) {
+    /**
+     * @param rubles - number of rubles to convert
+     * @return - number of dollars which user can get for this amount of rubles
+     */
+
+    public static int rubleToDollar(int rubles) {
+        if (rubles < 0) {
             return -1;
         }
-        return value / 60;
+        return rubles / 60;
     }
 
     public static void main(String[] args) {
