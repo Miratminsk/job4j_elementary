@@ -33,4 +33,40 @@ public class MatrixCheck {
             }
         return result;
     }
+
+    public static boolean monoVertical(char[][] board) {
+        boolean result = true;
+        for (int indexColumn = 0; indexColumn < board.length; indexColumn++) {
+            int count = 0;
+            for (int indexLine = 0; indexLine < board.length; indexLine++) {
+                if (board[indexLine][indexColumn] != 'X') {
+                    result = false;
+                    break;
+                } else if (board[indexLine][indexColumn] == 'X') {
+                    count++;
+                    if (count == board.length) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return result;
+    }
+
+    public static boolean monoVertical(char[][] board, int column) {
+        boolean result = true;
+            int count = 0;
+            for (int indexLine = 0; indexLine < board.length; indexLine++) {
+                if (board[indexLine][column] != 'X') {
+                    result = false;
+                    break;
+                } else if (board[indexLine][column] == 'X') {
+                    count++;
+                    if (count == board.length) {
+                        return true;
+                    }
+                }
+            }
+        return result;
+    }
 }
