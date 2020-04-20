@@ -77,4 +77,8 @@ public class MatrixCheck {
         }
         return rsl;
     }
+
+    public static boolean isWin(char[][] board) {
+        return monoHorizontal(board) || monoVertical(board);
+    }
 }
