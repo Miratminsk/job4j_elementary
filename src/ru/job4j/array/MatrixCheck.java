@@ -16,4 +16,21 @@ public class MatrixCheck {
         }
         return result;
     }
+
+    public static boolean monoHorizontal(char[][] board, int row) {
+        boolean result = true;
+        int count = 0;
+            for (int indexColumn = 0; indexColumn < board[row].length; indexColumn++) {
+                if (board[row][indexColumn] != 'X') {
+                    result = false;
+                    break;
+                } else if (board[row][indexColumn] == 'X') {
+                    count++;
+                    if (count == board[row].length) {
+                        return true;
+                    }
+                }
+            }
+        return result;
+    }
 }
