@@ -52,4 +52,14 @@ public class PhoneDictionaryTest {
         ArrayList<Person> persons = phones.find("Moscow");
         assertThat(persons.get(0).getPhone(), is("15243"));
     }
+
+    @Test
+    public void whenFindByNameOne() {
+        PhoneDictionary phones = new PhoneDictionary();
+        phones.add(
+                new Person("Petr", "Arsentev", "534872", "Bryansk")
+        );
+        ArrayList<Person> persons = phones.findByName("Petr");
+        assertThat(persons.get(0).getSurname(), is("Arsentev"));
+    }
 }
