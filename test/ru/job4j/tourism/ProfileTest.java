@@ -2,6 +2,7 @@ package ru.job4j.tourism;
 
 import org.junit.Test;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import static org.junit.Assert.*;
 
@@ -48,6 +49,19 @@ public class ProfileTest {
                 new Profile(new Address("Krasnodar", "Lenina", 78, 89))));
         List<Integer> expected = new ArrayList<>(List.of(17, 44, 78));
         List<Integer> actual = Profile.collectHome(profileList);
+        assertEquals(actual.toString(), expected.toString());
+    }
+
+    @Test
+    public void whenCollectCityTwo() {
+        List<Profile> profileList = new ArrayList<>(List.of(
+                new Profile(new Address("C", "Main", 17, 52)),
+                new Profile(new Address("C", "Main", 17, 52)),
+                new Profile(new Address("A", "First", 44, 23)),
+                new Profile(new Address("B", "Lenina", 78, 89))));
+        List<String> expected = new ArrayList<>(List.of("A", "B", "C"));
+        List<String> actual = Profile.collectCity(profileList);
+        actual.forEach(System.out::println);
         assertEquals(actual.toString(), expected.toString());
     }
 }

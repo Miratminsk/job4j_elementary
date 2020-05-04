@@ -1,5 +1,6 @@
 package ru.job4j.tourism;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -15,7 +16,9 @@ public class Profile {
     }
 
     public static List<String> collectCity(List<Profile> profiles) {
-        return profiles.stream().map(profile -> profile.getAddress().getCity()).collect(Collectors.toList());
+        List<String> cityNoDuplicate = profiles.stream().map(profile -> profile.getAddress().getCity()).collect(Collectors.toList()).stream().distinct().collect(Collectors.toList());
+        Collections.sort(cityNoDuplicate);
+        return cityNoDuplicate;
     }
 
     public static List<String> collectStreet(List<Profile> profiles) {
